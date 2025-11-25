@@ -20,11 +20,11 @@ class Solution:
             result[i] = running_product
 
         running_product = 1
-        # right side running product starting from second last element because we dont need to check for the last element as we already defined 1 
+        # right side running product starting from second last element
         for i in range(n-2, -1, -1):
             # we want right side product so multiplying from i + 1
             running_product = running_product * nums[i + 1]
-            # at ith position we are storing the product of the right side numbers
+            # at ith position we are storing the product of the numbers
             result[i] = result[i] * running_product
         
         return result
